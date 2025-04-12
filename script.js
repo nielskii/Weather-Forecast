@@ -3,7 +3,7 @@ let cidade;
             event.preventDefault();
             cidade = document.getElementById('cidade').value;
             const apiKEY ="5b036c89626317d693e836e666f07c3f";
-            const urlAPI =`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cidade)}&appid=${apiKEY}&lang=pt_br`;
+            const urlAPI =`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cidade)}&appid=${apiKEY}&units=metric&lang=pt_br`;
             if(cidade.trim()=== ""){
                 window.alert('Nome da cidade inválido :/');
                 return;
@@ -17,8 +17,8 @@ let cidade;
         }
         function showPrevisao(obj){
             document.querySelector('#city').innerHTML = `${obj.name}, ${obj.sys.country}`;
-            document.querySelector('#clima').innerHTML = `${obj.weather[0].description}`;
-            document.querySelector('#ventania').innerHTML = `${obj.wind.speed   }`;
+            document.querySelector('#clima').innerHTML = `${obj.weather[0].description}, ${Math.round(obj.main.temp)}°C`;
+            document.querySelector('#ventania').innerHTML = `Vento: ${obj.wind.speed   }`;
         }
         let limpar = document.getElementById('limparC').addEventListener('click',limparCampos);
         function limparCampos(event){

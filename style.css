@@ -2,6 +2,7 @@ body{
     background-color: #3A86FF;
     text-align: center;
     margin:6% auto 0 auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 @media (max-width:400px){
     body{
@@ -44,7 +45,7 @@ fieldset{
 }
 input{
     width: 200px;
-    height: 20px;
+    height: 25px;
     outline: 0;
     border: 0;
     border-radius: 6px;
